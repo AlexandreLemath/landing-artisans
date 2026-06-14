@@ -66,6 +66,8 @@ const offers = [
       "Tracking des appels, clics et formulaires",
       "Tableau de suivi des demandes",
       "Mini audit de votre présence actuelle",
+      "Option IA : résumé automatique des demandes clients",
+      "Option IA : réponse prête à envoyer pour chaque prospect",
     ],
     highlighted: true,
   },
