@@ -16,9 +16,9 @@ import {
   X,
 } from "lucide-react";
 
-const PHONE_NUMBER = "330778564900"; // Remplace par ton numéro WhatsApp au format international, ex : 33612345678
-const EMAIL = "alexandrezibapro@gmail.com"; // Remplace par ton mail pro
-const CALENDLY_LINK = "https://calendly.com/alexandreziba245/30min"; 
+const PHONE_NUMBER = "33600000000";
+const EMAIL = "alexandre.ziba.pro@gmail.com";
+const CALENDLY_LINK = "#contact";
 
 const services = [
   {
@@ -39,50 +39,72 @@ const services = [
   {
     icon: Zap,
     title: "Optimisation continue",
-    text: "Amélioration du texte, des CTA et du parcours client pour augmenter les contacts dans le temps.",
+    text: "Amélioration du texte, des boutons et du parcours client pour augmenter les contacts dans le temps.",
   },
 ];
 
 const offers = [
   {
-    name: "Installation simple",
-    price: "à partir de 390 €",
-    description: "Pour avoir une page propre et recevoir des demandes rapidement.",
+    name: "Landing page devis",
+    price: "à partir de 500 €",
+    description:
+      "Pour les artisans qui veulent une page simple, claire et prête à recevoir des demandes de devis rapidement.",
     features: [
-      "Landing page responsive",
-      "Bouton appel + WhatsApp",
+      "Page claire et responsive",
+      "Présentation de votre activité",
+      "Bouton appel visible",
+      "Bouton WhatsApp",
       "Formulaire de demande de devis",
+      "Texte optimisé pour rassurer et convertir",
       "Mise en ligne",
     ],
     highlighted: false,
   },
   {
-    name: "Système d'acquisition",
-    price: "à partir de 790 €",
-    description: "L'offre recommandée pour transformer ta présence en ligne en demandes concrètes.",
+    name: "Système acquisition",
+    price: "à partir de 900 €",
+    description:
+      "Pour transformer plus de visiteurs en appels, messages WhatsApp ou demandes de devis.",
     features: [
-      "Tout ce qui est inclus dans l'installation simple",
-      "Texte optimisé pour convaincre",
-      "Tracking des appels, clics et formulaires",
-      "Tableau de suivi des demandes",
-      "Mini audit de votre présence actuelle",
-      "Option IA : résumé automatique des demandes clients",
-      "Option IA : réponse prête à envoyer pour chaque prospect",
+      "Landing page ou page spéciale devis",
+      "Refonte d'une page existante si vous avez déjà un site",
+      "Texte plus vendeur et plus clair",
+      "Boutons appel / WhatsApp visibles sur mobile",
+      "Formulaire de devis propre",
+      "Suivi des prospects dans un tableau simple",
+      "Tracking simple des clics et formulaires",
+      "Option IA : résumé des demandes clients",
+      "Option IA : réponse prête à envoyer",
     ],
     highlighted: true,
   },
   {
     name: "Suivi mensuel",
     price: "à partir de 149 €/mois",
-    description: "Pour garder un système propre, suivi et amélioré chaque mois.",
+    description:
+      "Pour garder votre site propre, l'améliorer chaque mois et recevoir plus de contacts dans le temps.",
     features: [
-      "Maintenance technique",
       "Petites modifications mensuelles",
-      "Rapport simple des demandes",
-      "Optimisations du parcours client",
+      "Maintenance technique",
+      "Corrections de bugs",
+      "Mise à jour textes et photos",
+      "Ajout de nouveaux services ou chantiers",
+      "Amélioration du parcours client",
+      "Suivi des demandes reçues",
+      "Optimisation des boutons appel / WhatsApp",
+      "Automatisations IA simples si besoin",
     ],
     highlighted: false,
   },
+];
+
+const options = [
+  "Maintenance renforcée : +49 €/mois",
+  "Ajout automatisation IA : +99 €",
+  "Page service supplémentaire : +150 €",
+  "Mini audit mensuel avancé : +49 €/mois",
+  "Gestion Google Sheet prospects : +49 €/mois",
+  "Ajout nouveaux chantiers/photos : +49 €/mois",
 ];
 
 const faqs = [
@@ -122,9 +144,19 @@ function Button({ children, href = "#", variant = "primary", className = "" }) {
 function SectionTitle({ eyebrow, title, text }) {
   return (
     <div className="mx-auto mb-12 max-w-3xl text-center">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-zinc-400">{eyebrow}</p>
-      <h2 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">{title}</h2>
-      {text && <p className="mt-5 text-base leading-7 text-zinc-400 md:text-lg">{text}</p>}
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-zinc-400">
+        {eyebrow}
+      </p>
+
+      <h2 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">
+        {title}
+      </h2>
+
+      {text && (
+        <p className="mt-5 text-base leading-7 text-zinc-400 md:text-lg">
+          {text}
+        </p>
+      )}
     </div>
   );
 }
@@ -146,17 +178,30 @@ export default function App() {
             <div className="grid h-10 w-10 place-items-center rounded-2xl border border-white/15 bg-white text-sm font-black text-black">
               AZ
             </div>
+
             <div>
-              <p className="text-sm font-semibold leading-none">Alexandre Ziba</p>
-              <p className="mt-1 text-xs text-zinc-500">Acquisition locale</p>
+              <p className="text-sm font-semibold leading-none">
+                Alexandre Ziba
+              </p>
+              <p className="mt-1 text-xs text-zinc-500">
+                Acquisition locale
+              </p>
             </div>
           </a>
 
           <div className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
-            <a href="#solution" className="hover:text-white">Solution</a>
-            <a href="#offres" className="hover:text-white">Offres</a>
-            <a href="#faq" className="hover:text-white">FAQ</a>
-            <a href="#contact" className="hover:text-white">Contact</a>
+            <a href="#solution" className="hover:text-white">
+              Solution
+            </a>
+            <a href="#offres" className="hover:text-white">
+              Offres
+            </a>
+            <a href="#faq" className="hover:text-white">
+              FAQ
+            </a>
+            <a href="#contact" className="hover:text-white">
+              Contact
+            </a>
           </div>
 
           <div className="hidden md:block">
@@ -177,16 +222,27 @@ export default function App() {
         {menuOpen && (
           <div className="border-t border-white/10 bg-black px-5 py-4 md:hidden">
             <div className="flex flex-col gap-4 text-sm text-zinc-300">
-              <a href="#solution" onClick={() => setMenuOpen(false)}>Solution</a>
-              <a href="#offres" onClick={() => setMenuOpen(false)}>Offres</a>
-              <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
-              <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+              <a href="#solution" onClick={() => setMenuOpen(false)}>
+                Solution
+              </a>
+              <a href="#offres" onClick={() => setMenuOpen(false)}>
+                Offres
+              </a>
+              <a href="#faq" onClick={() => setMenuOpen(false)}>
+                FAQ
+              </a>
+              <a href="#contact" onClick={() => setMenuOpen(false)}>
+                Contact
+              </a>
             </div>
           </div>
         )}
       </header>
 
-      <section id="top" className="relative z-10 mx-auto grid min-h-[92vh] max-w-7xl items-center gap-14 px-5 py-20 md:grid-cols-[1.05fr_0.95fr] md:py-28">
+      <section
+        id="top"
+        className="relative z-10 mx-auto grid min-h-[92vh] max-w-7xl items-center gap-14 px-5 py-20 md:grid-cols-[1.05fr_0.95fr] md:py-28"
+      >
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -208,6 +264,7 @@ export default function App() {
             <Button href={`https://wa.me/${PHONE_NUMBER}?text=Bonjour%2C%20je%20veux%20un%20audit%20gratuit%20de%20ma%20pr%C3%A9sence%20en%20ligne.`}>
               Demander un audit gratuit <ArrowRight size={17} />
             </Button>
+
             <Button href="#solution" variant="secondary">
               Voir la solution
             </Button>
@@ -216,15 +273,23 @@ export default function App() {
           <div className="mt-10 grid max-w-2xl grid-cols-3 gap-4 border-t border-white/10 pt-8">
             <div>
               <p className="text-2xl font-semibold">24h</p>
-              <p className="mt-1 text-xs text-zinc-500">pour lancer une première version</p>
+              <p className="mt-1 text-xs text-zinc-500">
+                pour lancer une première version
+              </p>
             </div>
+
             <div>
               <p className="text-2xl font-semibold">3 CTA</p>
-              <p className="mt-1 text-xs text-zinc-500">appel, WhatsApp, formulaire</p>
+              <p className="mt-1 text-xs text-zinc-500">
+                appel, WhatsApp, formulaire
+              </p>
             </div>
+
             <div>
               <p className="text-2xl font-semibold">100%</p>
-              <p className="mt-1 text-xs text-zinc-500">pensé mobile et local</p>
+              <p className="mt-1 text-xs text-zinc-500">
+                pensé mobile et local
+              </p>
             </div>
           </div>
         </motion.div>
@@ -236,13 +301,17 @@ export default function App() {
           className="relative"
         >
           <div className="absolute -inset-4 rounded-[2rem] bg-white/10 blur-3xl" />
+
           <div className="relative rounded-[2rem] border border-white/10 bg-zinc-950/80 p-4 shadow-2xl backdrop-blur-xl">
             <div className="rounded-[1.5rem] border border-white/10 bg-black p-5">
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
                 <div>
                   <p className="text-sm font-semibold">Tableau des demandes</p>
-                  <p className="mt-1 text-xs text-zinc-500">Exemple de suivi client</p>
+                  <p className="mt-1 text-xs text-zinc-500">
+                    Exemple de suivi client
+                  </p>
                 </div>
+
                 <div className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">
                   Actif
                 </div>
@@ -254,16 +323,21 @@ export default function App() {
                   ["WhatsApp", "Urgence chauffage", "Hier", MessageCircle],
                   ["Formulaire", "Rénovation salle de bain", "Il y a 2 jours", Mail],
                 ].map(([type, title, time, Icon], index) => (
-                  <div key={index} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                  <div
+                    key={index}
+                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-4"
+                  >
                     <div className="flex items-center gap-3">
                       <div className="grid h-10 w-10 place-items-center rounded-xl bg-white text-black">
                         <Icon size={18} />
                       </div>
+
                       <div>
                         <p className="text-sm font-medium">{title}</p>
                         <p className="mt-1 text-xs text-zinc-500">{type}</p>
                       </div>
                     </div>
+
                     <p className="text-xs text-zinc-500">{time}</p>
                   </div>
                 ))}
@@ -274,9 +348,14 @@ export default function App() {
                   <p className="text-sm font-medium">Contacts reçus</p>
                   <p className="text-xs text-zinc-500">+32%</p>
                 </div>
+
                 <div className="flex h-28 items-end gap-2">
                   {[35, 50, 42, 70, 58, 88, 76, 96].map((height, index) => (
-                    <div key={index} className="flex-1 rounded-t-lg bg-white/80" style={{ height: `${height}%` }} />
+                    <div
+                      key={index}
+                      className="flex-1 rounded-t-lg bg-white/80"
+                      style={{ height: `${height}%` }}
+                    />
                   ))}
                 </div>
               </div>
@@ -313,8 +392,12 @@ export default function App() {
               <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-white text-black">
                 <item.icon size={22} />
               </div>
+
               <h3 className="text-lg font-semibold">{item.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-zinc-400">{item.text}</p>
+
+              <p className="mt-3 text-sm leading-6 text-zinc-400">
+                {item.text}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -323,13 +406,30 @@ export default function App() {
       <section className="relative z-10 mx-auto max-w-7xl px-5 pb-24">
         <div className="grid gap-5 rounded-[2rem] border border-white/10 bg-zinc-950/70 p-6 md:grid-cols-3 md:p-10">
           {[
-            ["01", "Audit rapide", "On repère où les visiteurs se perdent : site, fiche Google, boutons, formulaire, message."],
-            ["02", "Installation", "On crée une page claire avec appel, WhatsApp, formulaire et un message adapté à votre métier."],
-            ["03", "Suivi", "Vous voyez les demandes reçues et on améliore le système avec le temps."],
+            [
+              "01",
+              "Audit rapide",
+              "On repère où les visiteurs se perdent : site, fiche Google, boutons, formulaire, message.",
+            ],
+            [
+              "02",
+              "Installation",
+              "On crée une page claire avec appel, WhatsApp, formulaire et un message adapté à votre métier.",
+            ],
+            [
+              "03",
+              "Suivi",
+              "Vous voyez les demandes reçues et on améliore le système avec le temps.",
+            ],
           ].map(([number, title, text]) => (
-            <div key={number} className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6">
+            <div
+              key={number}
+              className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6"
+            >
               <p className="text-sm text-zinc-500">{number}</p>
+
               <h3 className="mt-4 text-xl font-semibold">{title}</h3>
+
               <p className="mt-3 text-sm leading-6 text-zinc-400">{text}</p>
             </div>
           ))}
@@ -339,8 +439,8 @@ export default function App() {
       <section id="offres" className="relative z-10 mx-auto max-w-7xl px-5 py-24">
         <SectionTitle
           eyebrow="Offres"
-          title="Commencez petit, puis améliorez le système."
-          text="Des offres simples pour lancer une présence plus crédible, puis suivre les demandes dans le temps."
+          title="Des offres orientées demandes de devis."
+          text="On ne vend pas juste un site : on met en place un parcours clair pour transformer les visiteurs en appels, WhatsApp et formulaires."
         />
 
         <div className="grid gap-5 lg:grid-cols-3">
@@ -358,21 +458,38 @@ export default function App() {
                   Recommandé
                 </div>
               )}
+
               <h3 className="text-2xl font-semibold">{offer.name}</h3>
-              <p className={`mt-3 text-sm leading-6 ${offer.highlighted ? "text-zinc-700" : "text-zinc-400"}`}>
+
+              <p
+                className={`mt-3 text-sm leading-6 ${
+                  offer.highlighted ? "text-zinc-700" : "text-zinc-400"
+                }`}
+              >
                 {offer.description}
               </p>
+
               <p className="mt-6 text-3xl font-semibold">{offer.price}</p>
+
               <ul className="mt-7 space-y-3">
                 {offer.features.map((feature) => (
                   <li key={feature} className="flex gap-3 text-sm">
                     <Check size={18} className="mt-0.5 shrink-0" />
-                    <span className={offer.highlighted ? "text-zinc-800" : "text-zinc-300"}>{feature}</span>
+                    <span
+                      className={
+                        offer.highlighted ? "text-zinc-800" : "text-zinc-300"
+                      }
+                    >
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>
+
               <a
-                href={`https://wa.me/${PHONE_NUMBER}?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l'offre%20${encodeURIComponent(offer.name)}.`}
+                href={`https://wa.me/${PHONE_NUMBER}?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l'offre%20${encodeURIComponent(
+                  offer.name
+                )}.`}
                 className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition ${
                   offer.highlighted
                     ? "bg-black text-white hover:bg-zinc-800"
@@ -384,6 +501,26 @@ export default function App() {
             </div>
           ))}
         </div>
+
+        <div className="mt-8 rounded-[2rem] border border-white/10 bg-white/[0.03] p-7">
+          <h3 className="text-2xl font-semibold">Options disponibles</h3>
+
+          <p className="mt-3 text-sm leading-6 text-zinc-400">
+            À ajouter selon le besoin du client, sans créer trop d'offres différentes.
+          </p>
+
+          <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {options.map((option) => (
+              <div
+                key={option}
+                className="flex gap-3 rounded-2xl border border-white/10 bg-black/40 p-4 text-sm text-zinc-300"
+              >
+                <Check size={18} className="mt-0.5 shrink-0" />
+                <span>{option}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="relative z-10 mx-auto max-w-7xl px-5 pb-24">
@@ -394,23 +531,28 @@ export default function App() {
                 <Star key={index} size={18} fill="currentColor" />
               ))}
             </div>
+
             <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
               Une présence en ligne doit rassurer et faire passer à l'action.
             </h2>
           </div>
+
           <div className="text-base leading-8 text-zinc-300 md:text-lg">
             <p>
               Beaucoup d'artisans ont déjà un site ou une fiche Google, mais le client doit chercher le numéro, comprendre l'offre, hésiter, puis abandonner. Mon travail est de simplifier le chemin : comprendre vite, cliquer vite, demander vite.
             </p>
+
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
                 <p className="text-2xl font-semibold text-white">+ clair</p>
                 <p className="mt-1 text-xs text-zinc-500">message direct</p>
               </div>
+
               <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
                 <p className="text-2xl font-semibold text-white">+ rapide</p>
                 <p className="mt-1 text-xs text-zinc-500">contact en 1 clic</p>
               </div>
+
               <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
                 <p className="text-2xl font-semibold text-white">+ suivi</p>
                 <p className="mt-1 text-xs text-zinc-500">demandes visibles</p>
@@ -429,11 +571,17 @@ export default function App() {
 
         <div className="space-y-4">
           {faqs.map((faq) => (
-            <details key={faq.question} className="group rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+            <details
+              key={faq.question}
+              className="group rounded-2xl border border-white/10 bg-white/[0.03] p-5"
+            >
               <summary className="cursor-pointer list-none text-lg font-semibold">
                 {faq.question}
               </summary>
-              <p className="mt-4 text-sm leading-7 text-zinc-400">{faq.answer}</p>
+
+              <p className="mt-4 text-sm leading-7 text-zinc-400">
+                {faq.answer}
+              </p>
             </details>
           ))}
         </div>
@@ -443,10 +591,14 @@ export default function App() {
         <div className="rounded-[2rem] border border-white/10 bg-white p-8 text-black md:p-14">
           <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
             <div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">Audit gratuit</p>
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
+                Audit gratuit
+              </p>
+
               <h2 className="text-4xl font-semibold tracking-tight md:text-6xl">
                 Je vous montre où vous perdez des demandes.
               </h2>
+
               <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-700">
                 Envoyez-moi votre site, fiche Google ou Instagram. Je vous réponds avec 2 ou 3 améliorations concrètes pour recevoir plus d'appels, messages ou devis.
               </p>
@@ -460,12 +612,14 @@ export default function App() {
                 >
                   WhatsApp <MessageCircle size={20} />
                 </a>
+
                 <a
                   href={`mailto:${EMAIL}?subject=Demande%20d'audit%20gratuit&body=Bonjour%2C%0A%0AJe%20veux%20un%20audit%20gratuit%20de%20ma%20pr%C3%A9sence%20en%20ligne.%0A%0AMon%20site%20%2F%20Instagram%20%2F%20fiche%20Google%20%3A%20%0A%0AMerci.`}
                   className="flex items-center justify-between rounded-2xl border border-black/10 bg-white px-5 py-4 font-semibold text-black transition hover:bg-zinc-100"
                 >
                   Email <Mail size={20} />
                 </a>
+
                 <a
                   href={CALENDLY_LINK}
                   className="flex items-center justify-between rounded-2xl border border-black/10 bg-white px-5 py-4 font-semibold text-black transition hover:bg-zinc-100"
@@ -485,10 +639,17 @@ export default function App() {
       <footer className="relative z-10 border-t border-white/10 px-5 py-8">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-sm text-zinc-500 md:flex-row">
           <p>© {new Date().getFullYear()} Alexandre Ziba. Tous droits réservés.</p>
+
           <div className="flex gap-5">
-            <a href={`mailto:${EMAIL}`} className="hover:text-white">Email</a>
-            <a href={`https://wa.me/${PHONE_NUMBER}`} className="hover:text-white">WhatsApp</a>
-            <a href="#top" className="hover:text-white">Retour en haut</a>
+            <a href={`mailto:${EMAIL}`} className="hover:text-white">
+              Email
+            </a>
+            <a href={`https://wa.me/${PHONE_NUMBER}`} className="hover:text-white">
+              WhatsApp
+            </a>
+            <a href="#top" className="hover:text-white">
+              Retour en haut
+            </a>
           </div>
         </div>
       </footer>
